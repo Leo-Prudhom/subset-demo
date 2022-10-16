@@ -26,16 +26,19 @@ function Subsets() {
     <div style={{ margin: "150px 0", width: "100%" }}>
       <h4>Subset</h4>
       <div className="Subsets-list">
-        {subsetsData?.map(({ value, subsetWidth }, i) => (
-          <Subset
-            key={value}
-            width={subsetWidth}
-            start={value}
-            end={value + step - start}
-            isStart={i === 0}
-            isEnd={i === subsetsData.length - 1}
-          />
-        ))}
+        {subsetsData?.map(({ value, subsetWidth }, i) => {
+          let isEnd = i === subsetsData.length - 1;
+          return (
+            <Subset
+              key={value}
+              width={subsetWidth}
+              start={value}
+              end={!isEnd ? value + step - start : end}
+              isStart={i === 0}
+              isEnd={isEnd}
+            />
+          );
+        })}
       </div>
     </div>
   );
