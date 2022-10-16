@@ -6,7 +6,7 @@ export default function Controls() {
   const { start, end, step, handleStart, handleEnd, handleStep } =
     useContext(ControlsContext);
   return (
-    <div style={{ width: "100%" }}>
+    <div style={{ width: "80%" }}>
       <h4>Controls</h4>
       <div
         style={{
@@ -15,7 +15,7 @@ export default function Controls() {
           justifyContent: "space-around",
         }}
       >
-        <div>
+        <div className="Controls">
           <label for="start">Start</label>
           <input
             type="number"
