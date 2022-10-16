@@ -28,6 +28,29 @@
   color: #61dafb;
 }
 
+.Subsets-list{
+  width: 100%;
+  justify-content: space-evenly;
+  display: flex;
+}
+
+.Subset{
+  justify-content: center;
+  background-color: #61dafb;
+  height: 5px;
+}
+
+.Subset-values{
+  display: flex;
+  margin-top: 30px;
+  justify-content: space-between;
+  font-size: 12px;
+}
+
+.Subset-start, .Subset-end {
+  margin-right: -5%;
+} 
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
