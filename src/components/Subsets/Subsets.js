@@ -26,7 +26,7 @@ function Subsets() {
 
   return (
     <div style={{ margin: "150px 0", width: "100%" }}>
-      <h4>Subset</h4>
+      <h4>{`De ${start} à ${end} avec un pas de ${step}`}</h4>
       <div className="Subsets-list">
         {subsetsData?.map(({ value, subsetWidth }, i) => {
           let isEnd = i === subsetsData.length - 1;
