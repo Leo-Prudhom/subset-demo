@@ -22,6 +22,8 @@ function Subsets() {
     [subsetsValue, subsetWidth]
   );
 
+  console.log(subsetsData);
+
   return (
     <div style={{ margin: "150px 0", width: "100%" }}>
       <h4>Subset</h4>
@@ -32,8 +34,8 @@ function Subsets() {
             <Subset
               key={value}
               width={subsetWidth}
-              start={value}
-              end={!isEnd ? value + step - start : end}
+              start={i === 0 ? value : value - step}
+              end={!isEnd ? value + step : end}
               isStart={i === 0}
               isEnd={isEnd}
             />
