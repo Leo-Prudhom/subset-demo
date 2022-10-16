@@ -25,7 +25,6 @@ export default function ControlsContextProvider({ children }) {
   }, []);
 
   const handleStep = useCallback((value) => {
-    console.log(value);
     setStep(Number(value));
   }, []);
 

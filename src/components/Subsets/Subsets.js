@@ -22,8 +22,6 @@ function Subsets() {
     [subsetsValue, subsetWidth]
   );
 
-  console.log(subsetsData);
-
   return (
     <div style={{ margin: "150px 0", width: "100%" }}>
       <h4>{`De ${start} à ${end} avec un pas de ${step}`}</h4>
