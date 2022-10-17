@@ -1,7 +1,8 @@
 import React from "react";
 import "./App.css";
 import Controls from "./components/Controls";
-import Subsets from "./components/Subsets";
+import SubsetValuesRange from "./components/SubsetValuesRange";
+import ValuesRange from "./components/ValuesRange";
 import ControlsContextProvider from "./contexts/ControlsContext";
 
 function App() {
@@ -10,7 +11,8 @@ function App() {
       <ControlsContextProvider>
         <div className="App-header">
           <Controls />
-          <Subsets />
+          <ValuesRange isMain />
+          <SubsetValuesRange />
         </div>
       </ControlsContextProvider>
     </div>
