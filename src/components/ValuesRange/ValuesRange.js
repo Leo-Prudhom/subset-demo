@@ -1,9 +1,10 @@
-import React, { useContext, useMemo, memo } from "react";
+import React, { useContext, useMemo, memo, useState, useEffect } from "react";
 import { ControlsContext } from "../../contexts/ControlsContext";
 import Subset from "./Subset";
 
 function ValuesRange({ isMain }) {
   const { start, end, step, handleSubsetClick } = useContext(ControlsContext);
+  const [activeIndex, setActiveIndex] = useState(null);
 
   const subsetWidth = useMemo(() => {
     if (start < end && step <= end) return `${(step / (end - start)) * 100}%`;
@@ -22,6 +23,12 @@ function ValuesRange({ isMain }) {
     [subsetsValue, subsetWidth]
   );
 
+  useEffect(() => {
+    return () => {
+      setActiveIndex(null);
+    };
+  }, [start, end, step]);
+
   return (
     <div style={{ margin: "150px 0", width: "100%" }}>
       {isMain && <h4>{`De ${start} à ${end} avec un pas de ${step}`}</h4>}
@@ -30,6 +37,9 @@ function ValuesRange({ isMain }) {
           let isEnd = i === subsetsData.length - 1;
           return (
             <Subset
+              activeIndex={activeIndex}
+              setActiveIndex={setActiveIndex}
+              currentIndex={i}
               key={value}
               width={subsetWidth}
               start={i === 0 ? value : value - step}

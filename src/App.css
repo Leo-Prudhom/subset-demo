@@ -42,7 +42,7 @@
   cursor: pointer;
 }
 
-.Subset:hover{
+.Subset:hover, .Subset-active{
   height: 10px;
   background-color: crimson;
 }

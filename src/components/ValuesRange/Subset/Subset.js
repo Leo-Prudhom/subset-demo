@@ -1,6 +1,9 @@
 import React from "react";
 
 export default function Subset({
+  activeIndex,
+  setActiveIndex,
+  currentIndex,
   width,
   start,
   end,
@@ -8,11 +11,17 @@ export default function Subset({
   isEnd,
   onSubsetClick,
   step,
+  noAction,
 }) {
   return (
     <div
-      onClick={() => onSubsetClick(isStart ? start : start + step, end)}
-      className="Subset"
+      onClick={() => {
+        if (!noAction) {
+          setActiveIndex(currentIndex);
+          onSubsetClick(isStart ? start : start + step, end);
+        }
+      }}
+      className={activeIndex === currentIndex ? "Subset-active" : "Subset"}
       style={{
         maxWidth: `calc(${width} - 10px)`,
         width: `calc(${width} - 10px)`,
